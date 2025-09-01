@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import clsx from "clsx";
 import NavBar from "@/components/NavBar";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ecomece",
@@ -14,9 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className= {clsx(inter.className, 'bg-slate-700')}>
         <NavBar />
-        <main className="bg-slate-700 h-screen p-16">{children}</main>
+        <main className=" h-screen p-16">{children}</main>
       </body>
     </html>
   );
