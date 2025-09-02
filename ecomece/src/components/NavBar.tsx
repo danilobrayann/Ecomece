@@ -1,14 +1,33 @@
 import Link from "next/link";
+import { SignedIn, SignedOut, UserButton, SignInButton } from "@clerk/nextjs";
 
 export default function NavBar() {
   return (
-    <nav className="fixed top-0 w-full flex items-center py-2 px-8 justify-between z-50 bg-slate-800 text-gray-300">
+    <nav
+      className="fixed top-0 w-full flex items-center py-2 px-8 justify-between z-50 bg-slate-800 text-gray-300"
+      aria-label="Barra de navegação principal"
+    >
       <Link
         href="/"
         className="uppercase font-bold text-md h-12 flex items-center"
       >
-        Next Stor
+        Next Store
       </Link>
+      <div className="flex items-center gap-8">
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        <SignedOut>
+          <SignInButton>
+            <button
+              className="uppercase rounded-sm border border-gray-400 px-3 py-2"
+              type="button"
+            >
+              Faça login
+            </button>
+          </SignInButton>
+        </SignedOut>
+      </div>
     </nav>
   );
 }
