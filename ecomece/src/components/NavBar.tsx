@@ -18,9 +18,9 @@ export default function NavBar() {
           <UserButton />
         </SignedIn>
         <SignedOut>
-          <SignInButton>
+          <SignInButton mode="modal">
             <button
-              className="uppercase rounded-sm border border-gray-400 px-3 py-2"
+              className=" border rounded-sm  border-gray-400 px-3 py-2"
               type="button"
             >
               Faça login
@@ -30,4 +30,4 @@ export default function NavBar() {
       </div>
     </nav>
   );
-}
+} 
