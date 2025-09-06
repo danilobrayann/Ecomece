@@ -22,7 +22,8 @@ export default function ProductsImagem({ product, fill }: productimagemProps) {
       onLoadingComplete={() => setLoading(false)}
     />
   ) : (
-    <Image src={product.image}
+    <Image
+      src={product.image}
       width={400}
       height={700}
       alt={product.title}
@@ -31,6 +32,7 @@ export default function ProductsImagem({ product, fill }: productimagemProps) {
           ? "scale-110 blur-3xl grayscale"
           : "scale-100 blur-0 grayscale-0"
       }`}
-      onLoadingComplete={() => setLoading(false)} />
+      onLoadingComplete={() => setLoading(false)}
+    />
   );
 }
